@@ -14,10 +14,10 @@ const Footer = () => {
           <ul className="flex flex-wrap items-center space-x-4 sm:space-x-8">
            
             <li>
-              <a href="#">Terms of Use</a>
+              <a>Terms of Use</a>
             </li>
             <li>
-              <a href="#">Privacy</a>
+              <a>Privacy</a>
             </li>
           </ul>
         </div>

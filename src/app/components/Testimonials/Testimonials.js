@@ -19,7 +19,7 @@ const Testimonials = () => {
                 The software is user-friendly, efficient, and well-optimized for handling medical stock with accuracy ”
                 </p>
                 <div className=" mt-4 flex flex-col font-semibold justify-left space-x-3 text-base">
-                  <div className=" text-lg text-gray-900">Ashish Bhayiya, </div>
+                  <div className=" text-lg text-gray-900">Lalchand lalwani, </div>
                   <div className="text-gray-600">Propritier Mann Medical, Nagpur   </div>
                 </div>
               </blockquote>
@@ -37,7 +37,7 @@ const Testimonials = () => {
                 We’ve noticed a major reduction in errors and an improvement in overall workflow”
                 </p>
                 <div className=" mt-4 flex flex-col font-semibold justify-left space-x-3 text-base">
-                  <div className=" text-lg text-gray-900">Ashish Bhayiya, </div>
+                  <div className=" text-lg text-gray-900">Ritesh Ramani, </div>
                   <div className="text-gray-600">Propritier Apex Medical, Nagpur   </div>
                 </div>
               </blockquote>

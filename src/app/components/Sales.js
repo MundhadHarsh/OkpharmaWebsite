@@ -53,15 +53,38 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
       },
       
     ]    
+
+    const refForm = useRef();
+
     const sendEmail = (e) => {
         e.preventDefault();
-        // service_id, templte_id and public key will get from Emailjs website when you create account and add template service and email service 
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 
-        'YOUR_PUBLIC_KEY')
+
+        const templateParams = {
+          'name': 'James',
+          'number': 'Number',
+          'medicalName': 'medical_name'
+      }
+    
+        console.log("services idd--",process.env.NEXT_PUBLIC_SERVICEID,"--template --", process.env.NEXT_PUBLIC_TEMPLATEID,"--templ --", templateParams,"PUBLICKEY",process.env.NEXT_PUBLIC_PUBLICKEY   )
+        if (typeof form !== 'undefined') {
+          if (el) {
+            console.log('inside sendEmail',form.current )
+        
+          }
+        }
+
+      emailjs.sendForm( process.env.NEXT_PUBLIC_SERVICEID, 
+        process.env.NEXT_PUBLIC_TEMPLATEID,
+        refForm.current,
+         {
+        publicKey:process.env.NEXT_PUBLIC_PUBLICKEY
+      } )
           .then((result) => {
               console.log(result.text);
+              alert("Registered for demo !!")
           }, (error) => {
-              console.log(error.text);
+              console.log(error);
+              alert("Error! please try again later !!")
           });
         };
         
@@ -80,7 +103,7 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
       <div className="grid grid-cols-2 gap-2  justify-items-center">
           <div>
            <div className="text-4xl font-bold">
-           India&aposs most <div className=' text-white bg-red-400 inline'> easy-to-use and accurate</div> pharmacy management software
+           India's most <div className=' text-white bg-red-400 inline'> easy-to-use and accurate</div> pharmacy management software
             </div> 
 
 
@@ -94,12 +117,12 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
           </div>
 
           <div className='bg-white m-2 rounded-2xl w-md  p-2 pb-4 justify-self-center' >
-            <p className="mt-2 text-lg text-center text-gray-600 ">Enter your details and we&aposll call you back</p>
+            <p className="mt-2 text-lg text-center text-gray-600 ">Enter your details and we'll call you back</p>
         
         
         
         
-          <form action="#"  onSubmit={sendEmail} method="POST" className="mx-4 mt-4  sm:mt-8">
+          <form action="#" ref={refForm} onSubmit={sendEmail} method="POST" className="mx-4 mt-4  sm:mt-8">
             <div className="grid grid-cols-1 gap-y-6 ">
               <div>
                 <label htmlFor="name" className="block text-sm/6 font-semibold text-gray-900">

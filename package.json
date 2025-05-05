@@ -12,6 +12,8 @@
     "@emailjs/browser": "^4.4.1",
     "@headlessui/react": "^2.1.8",
     "@heroicons/react": "^2.1.5",
+    "dotenv": "^16.5.0",
+    "env": "^0.0.2",
     "next": "15.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

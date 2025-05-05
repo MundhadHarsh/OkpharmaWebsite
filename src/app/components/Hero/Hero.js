@@ -169,7 +169,7 @@ const navigation = [
             <div className="mt-10 text-white bg-emerald-500 px-4 py-2 w-fit text-2xl justify-self-center justify-center  border-2 hover:border-emerald-500 hover:bg-white hover:text-emerald-500 rounded-full font-semibold shadow-sm  "
                           onClick={()=>scrollTocomponent("salesSection")}
 >
-              Book your free demo @ +91 7354290129
+              Book your free demo @ +91 7354290123
             </div>
           </div>
         </div>

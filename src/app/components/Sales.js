@@ -65,13 +65,7 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
           'medicalName': 'medical_name'
       }
     
-        console.log("services idd--",process.env.NEXT_PUBLIC_SERVICEID,"--template --", process.env.NEXT_PUBLIC_TEMPLATEID,"--templ --", templateParams,"PUBLICKEY",process.env.NEXT_PUBLIC_PUBLICKEY   )
-        if (typeof form !== 'undefined') {
-          if (el) {
-            console.log('inside sendEmail',form.current )
-        
-          }
-        }
+      console.log("services idd--",process.env.NEXT_PUBLIC_SERVICEID,"--template --", process.env.NEXT_PUBLIC_TEMPLATEID,"--templ --", templateParams,"PUBLICKEY",process.env.NEXT_PUBLIC_PUBLICKEY   )
 
       emailjs.sendForm( process.env.NEXT_PUBLIC_SERVICEID, 
         process.env.NEXT_PUBLIC_TEMPLATEID,
@@ -86,6 +80,7 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
               console.log(error);
               alert("Error! please try again later !!")
           });
+          e.target.reset();
         };
         
 
@@ -103,7 +98,7 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
       <div className="grid grid-cols-2 gap-2  justify-items-center">
           <div>
            <div className="text-4xl font-bold">
-           India`&apos`s most <div className=' text-white bg-red-400 inline'> easy-to-use and accurate</div> pharmacy management software
+           India&apos;s most <div className=' text-white bg-red-400 inline'> easy-to-use and accurate</div> pharmacy management software
             </div> 
 
 
@@ -117,7 +112,7 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
           </div>
 
           <div className='bg-white m-2 rounded-2xl w-md  p-2 pb-4 justify-self-center' >
-            <p className="mt-2 text-lg text-center text-gray-600 ">Enter your details and we`&apos`ll call you back</p>
+            <p className="mt-2 text-lg text-center text-gray-600 ">Enter your details and we&apos;ll call you back</p>
         
         
         

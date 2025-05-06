@@ -65,7 +65,6 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
           'medicalName': 'medical_name'
       }
     
-      console.log("services idd--",process.env.NEXT_PUBLIC_SERVICEID,"--template --", process.env.NEXT_PUBLIC_TEMPLATEID,"--templ --", templateParams,"PUBLICKEY",process.env.NEXT_PUBLIC_PUBLICKEY   )
 
       emailjs.sendForm( process.env.NEXT_PUBLIC_SERVICEID, 
         process.env.NEXT_PUBLIC_TEMPLATEID,

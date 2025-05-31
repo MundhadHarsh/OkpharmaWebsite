@@ -53,18 +53,20 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
       },
       
     ]    
+  const refForm = useRef();
+        let templateParamsString
+  if(refForm.current){  const templateParams  ={
+          'nameFormValue': refForm.current.nameFormValue.value,
+          'phoneNumberFormValue': refForm.current.phoneNumberFormValue.value,
+          'medicalNameFormValue': refForm.current.medicalNameFormValue.value
+      }
+     templateParamsString = JSON.stringify(templateParams)
+}     
 
-    const refForm = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
 
-        const templateParams = {
-          'name': 'James',
-          'number': 'Number',
-          'medicalName': 'medical_name'
-      }
-    
 
       emailjs.sendForm( process.env.NEXT_PUBLIC_SERVICEID, 
         process.env.NEXT_PUBLIC_TEMPLATEID,
@@ -124,12 +126,13 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
                 </label>
                 <div className="mt-2.5">
                   <input
-                    id="name"
-                    name="name"
+                    id="nameFormValue"
+                    name="nameFormValue"
                     type="text"
                     onClick={(e) => setname(e.target.value)}
                     autoComplete="given-name"
                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-600"
+                  required
                   />
                 </div>
               </div>
@@ -140,12 +143,13 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
                 </label>
                 <div className="mt-2.5">
                   <input
-                    id="medicalName"
-                    name="medicalName"
+                    id="medicalNameFormValue"
+                    name="medicalNameFormValue"
                     type="text"
                     onClick={(e) => setmedicalName(e.target.value)}
                     autoComplete="organization"
                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-600"
+                  required
                   />
                 </div>
               </div>
@@ -157,12 +161,14 @@ import {BellAlertIcon ,ShieldCheckIcon , QrCodeIcon,CheckIcon,
                   <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-emerald-600">
                 
                     <input
-                      id="phone-number"
-                      name="phone-number"
+                      id="phoneNumberFormValue"
+                      name="phoneNumberFormValue"
                       type="text"
                       onClick={(e) => setphoneNumber(e.target.value)}
-                      placeholder="123-456-7890"
+                      placeholder="734XXXXXXX"
                       className="block w-full  py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                    required
+                    pattern='(\+)?(91)?( )?[789]\d{9}'
                     />
                   </div>
                 </div>

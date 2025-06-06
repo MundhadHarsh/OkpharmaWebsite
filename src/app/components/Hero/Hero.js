@@ -3,8 +3,6 @@ import React from 'react'
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import mainLogo from '../../pharma_mg.webp';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Image from "next/image";
 
 const navigation = [
@@ -20,7 +18,7 @@ const navigation = [
 
   function scrollTocomponent(component) {
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const el = document.getElementById(component);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
@@ -35,16 +33,20 @@ const navigation = [
   return (
     <div className="bg-white">
 
-      <header className="absolute inset-x-0 top-0 z-50">
+      <header className="relative inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
         <div  className="text-2xl font-bold text-emerald-600">
-        Ok
+        OK
         </div>
   
           <div className="flex lg:flex-1 ">
             <a  className="-m-1.5 p-1.5">
               <span className="sr-only">Okpharma</span>
-           
+              <img
+                alt=""
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                className="h-8 w-auto"
+              />
               
             </a>
           </div>
@@ -82,13 +84,13 @@ const navigation = [
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
           <div className="fixed inset-0 z-50" />
-          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w sm:ring-1 sm:ring-gray-900/10 ">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
+                <span className="sr-only">OkPharma</span>
                 <Image
                   alt=""
-                  src={`https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600`}
+                  src={'/OK.png'}
                   width="10"
                   height="10"
                   className="h-8 w-auto"
@@ -97,9 +99,9 @@ const navigation = [
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="-m-2.5 rounded-md p-2.5 text-gray-700 border-4"
               >
-                <span className="sr-only">Close menu</span>
+                <span className="sr-only ">Close menu</span>
                 <XMarkIcon aria-hidden="true" className="h-6 w-6" />
               </button>
             </div>
@@ -109,18 +111,18 @@ const navigation = [
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
-                    <Link
+                    <div
                       key={item.name}
                       to={item.href}
-                      onClick={()=>scrollTocomponent(item.id)}
-                    
+                      onClick={()=>{setMobileMenuOpen(false);scrollTocomponent(item.id) }}
+
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       {item.name}
-                    </Link>
+                    </div>
                   ))}
                     <button className="mt-4 bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-full "
-                    onClick={()=>scrollTocomponent("salesSection")}>
+                    onClick={()=>{setMobileMenuOpen(false);scrollTocomponent("salesSection")}}>
             Book a free demo
           </button>
                 </div>
@@ -134,7 +136,7 @@ const navigation = [
 
 
 
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+      <div className="relative isolate px-2 lg:px-8 mx-auto">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -153,7 +155,7 @@ const navigation = [
 
 
         
-        <div className="mx-auto max-w-2xl py-16 sm:py-48 lg:py-56">
+        <div className="mx-auto max-w-2xl py-16 lg:py-42 ">
           <div className="text-center">
           <div  className="text-2xl sm:text-4xl  text-emerald-600 mb-4">
         OkPharma
@@ -166,7 +168,7 @@ const navigation = [
             <p className="mt-6 text-lg leading-8 text-gray-600">
             Over 20+ years of experience in serving pharmacies
             </p>
-            <div className="mt-10 text-white bg-emerald-500 px-4 py-2 w-fit text-2xl justify-self-center justify-center  border-2 hover:border-emerald-500 hover:bg-white hover:text-emerald-500 rounded-full font-semibold shadow-sm  "
+            <div className="mt-10  text-white bg-emerald-500 px-4 py-2 w-fit text-xl font-medium sm:font-semibold  sm:text-2xl justify-self-center justify-center  border-2 hover:border-emerald-500 hover:bg-white hover:text-emerald-500 rounded-full shadow-sm  "
                           onClick={()=>scrollTocomponent("salesSection")}
 >
               Book your free demo @ +91 7354290123

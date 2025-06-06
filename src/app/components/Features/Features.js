@@ -190,9 +190,9 @@ const featuresAtGlance = [
 const Features = () => {
   return (
 
-    <>
+    <div className=''>
 <div id='features' className="mx-auto max-w-2xl lg:text-center pt-16">
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-2xl text-center self-center font-bold tracking-tight text-gray-900 sm:text-4xl">
           Features at a glance
           </p>
         </div>
@@ -230,31 +230,31 @@ const Features = () => {
 
 
         <div className="bg-white py-24 sm:py-32">
-        <p className="mt-2 text-3xl font-bold lg:text-center tracking-tight text-gray-900 sm:text-4xl p-16">
+        <p className="mt-2 text-2xl font-bold text-center tracking-tight text-gray-900 sm:text-4xl p-4 sm:p-16">
           Why OkPharma is the best for your pharmacy management?
           </p>
         <dl className="grid max-w-xl grid-cols-1 gap-y-10 lg:max-w-none lg:grid-cols-1 ">
             {features.map((feature) => (
               <div
                 key={feature.name + feature.index}
-                className={`relative flex items-center gap-4 sm:px-38 justify-between rounded-lg  
+                className={`relative flex flex-wrap sm:flex-nowrap items-center sm:gap-4 sm:px-38 sm:justify-between rounded-lg
                 ${
-                  feature.index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                  feature.index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'
                 } `}
               >
                 <dt className="flex flex-col items-center justify-center px-10 ">
-                  <div className="flex  items-center justify-center rounded-lg bg-emerald-600 w-max h-max ">
+                  <div className="flex  items-center justify-center rounded-lg bg-emerald-600 sm:w-max sm:h-max ">
                   <Image src={`${feature.imgAddress}`} alt={feature.name} width="200" height="200" />
                   </div>
                 </dt>
 
-                <dd className={`flex-1  p-2 
+                <dd className={`  p-2 
                 ${ feature.index % 2 === 0 ? 'sm:mr-10' : 'sm:ml-10' } 
                 `}>
-                  <div className="text-2xl font-bold leading-7 my-2 text-gray-900">
+                  <div className=" text-xl sm:text-2xl  font-bold leading-7 my-2 text-center sm:text-left text-gray-900">
                     {feature.name}
                   </div>
-                  <div className="mt-2 text-base leading-7 text-gray-600">
+                  <div className="mt-2 text-sm sm:text-base  leading-7 text-center sm:text-left text-gray-600">
                     {feature.description}
                   </div>
                 </dd>
@@ -266,7 +266,7 @@ const Features = () => {
         </div >
 
 
-    </>
+    </div>
 
 
   );

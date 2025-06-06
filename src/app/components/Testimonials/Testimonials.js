@@ -7,13 +7,13 @@ const Testimonials = () => {
     <section id='testimonials' className="testimonials">
    
     <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
-    <p className="mt-2 text-3xl font-bold lg:text-center tracking-tight text-gray-900 sm:text-4xl ">
+    <p className="mt-2 text-2xl sm:text-4xl font-bold lg:text-center tracking-tight text-gray-900">
           Lets hear from our customers
           </p>
           <div className="mx-auto max-w-2xl lg:max-w-7xl ">
         
-            <figure className=" mt-10 flex flex-row justify-center items-center   ">
-              <blockquote className=" text-left text-lg font-medium text-gray-900 sm:text-2xl/9 mx-4">
+            <figure className=" mt-10 flex flex-wrap sm:flex-nowrap flex-row justify-center items-center   ">
+              <blockquote className=" text-left text-base font-medium text-gray-900 sm:text-2xl/9 mx-4">
                 <p>
                 “OkPharma has significantly simplified our inventory management and billing process. 
                 The software is user-friendly, efficient, and well-optimized for handling medical stock with accuracy ”
@@ -31,7 +31,7 @@ const Testimonials = () => {
               </figcaption>
             </figure>
 
-            <figure className=" mt-10 flex flex-row justify-center items-center   ">
+            <figure className=" mt-10 flex flex-wrap sm:flex-nowrap flex-row justify-center items-center   ">
               <blockquote className=" text-left text-lg font-medium text-gray-900 sm:text-2xl/9 mx-4">
                 <p>“Thanks to OKPharma, we’ve completely eliminated overstocking and improved our inventory accuracy
                 We’ve noticed a major reduction in errors and an improvement in overall workflow”

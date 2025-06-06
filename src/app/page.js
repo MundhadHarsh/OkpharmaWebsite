@@ -8,7 +8,6 @@ import Pricing from "./components/Pricing/Pricing";
 import FAQ from "./components/FAQs/FAQ";
 import Footer from "./components/Footer/Footer";
 import Sales from "./components/Sales";
-
 import { use, useRef } from "react";
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
 
   return (
     <div>
-
       <Hero  />
       <Features />
       <Benefits />

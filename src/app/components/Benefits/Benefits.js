@@ -13,7 +13,7 @@ const Benefits = () => {
 
 
 <div className="bg-white py-24 sm:py-32">
-          <p className="mb-16 text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl">
+          <p className="mb-16 text-2xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl">
           Our achivements in pharmacy management
           </p>
       
@@ -21,7 +21,7 @@ const Benefits = () => {
   <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
     {stats.map((stat) => (
       <div key={stat.id} className="mx-auto flex max-w-xs flex-col gap-y-4">
-        <dt className="text-base text-xl leading-7 text-gray-600">{stat.name}</dt>
+        <dt className=" text-xl leading-7 text-gray-600">{stat.name}</dt>
         <dd className="order-first text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
           {stat.value}
         </dd>

@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
 
 
-        <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-4">
+        <ul className="flex flex-wrap pl-3 space-y-2 ml-8 sm:ml-0 space-x-4 sm:space-x-4">
 
           <li className="flex flex-row space-x-2 ">
           <PhoneIcon  aria-hidden="true" className="h-6 w-6 mx-2" />
